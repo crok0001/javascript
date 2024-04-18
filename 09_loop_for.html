@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            반복문 : 프로그램 내에서 연속된 동일한 명령을 일정 횟수
+                    만큼 반복하여 수행하도록 제어하는 명령문.
+            종류 : for문(반복횟수가 정해져 있는경우)
+                   while, do while(반복횠수가 정해져 있지 않은 경우)
+
+            
+            for 문 표현식
+
+            for(초기화식; 조건식; 증강식){
+                반복수행되는 작업
+            }
+
+            1. 초기화식은 ex) let i = 0; 최초에 한번만 수행
+            2. 초기화된 값을 비교하여 조건식을 결과가 참이면 블럭{}
+               내부에서 수행문을 실행
+               ex) i < 10;
+            3.증감식 : for문 초기화식에 선언된 변수의 값의 증가 또는
+                       감소를 연산하여 조건식에 활용
+
+              ex) i+= 2; i++ i-- i = i i+3 emdemd
+            4. 2~3반복 수행
+            5. 조건식을 비교하였을때 조건식을 결과가 false이면
+               반복문 종료
+        */
+        
+        //for(var i = 1; i <= 10; i+= 1){
+        for(var i = 1; i < 10; i++){
+            document.write(i+"하이");
+        }
+        document.write('i :' + i); 
+
+        for(let j = 1; j <= 6; j++){
+            document.write('<h'+j+'>');
+            document.write(j);
+            document.write('</h'+j+'>');
+        }
+       // document.write('j :' +j)
+
+       /*
+            quiz: 1
+            1에서 부터 100까지의 총합을 구해여
+            반복문을 종료후 출력하시오.
+       */
+       let all = 0;
+       for(let i = 0; i <= 100; i++){
+            all += i;
+       }
+       document.write(all);
+       document.write('<hr/>')
+
+       let sum = 0
+       for(let i = 100; i > 0; i--){
+        sum += i;
+       }
+
+       let number = parseInt (prompt('숫자를입력해주세요'))
+       let number2 = parseInt (prompt('숫자를입력해주세요'))
+       let answer = 0;
+
+       for(let j = number; j <= number2; j++){
+            answer += j
+       }
+       document.write('<br/>',number+'~'+number2+'까지의 합을 구합니다:' +answer);
+       document.write('<hr/>')
+        sum = 0;
+        all = 0;
+        for(let i = 0; i <= 100; i++){
+            all += i
+            if(i % 3 == 0){
+                sum += i;
+            }
+        }
+        document.write('all 전체합계 :'+all+'<br/>');
+        document.write('sum 3의배수 :'+sum+'<br/>');
+
+        sum = 0;
+        /*
+            continue 문 - 반복문을 내부의 실행 흐름을 제어하는 예약어
+            continue; 를 만나면 반복문 블럭내부의 아래 실행문은
+                      수행하지 않고 즉시 증감식으로 이동한다
+        */
+        for(let i = 0; i <= 100; i++){
+            if(i % 3 != 0){
+                continue;
+    
+            }
+            sum += i;
+        }
+
+        document.write('sum :'+sum);
+        document.write('<br/>')
+
+        sum = 0;
+        for(let i = 0; i <= 1000; i++){
+            if(i % 3 == 0){
+                sum += i;
+            }
+            console.log(i);
+            if(i > 100){
+                break;
+            }
+        }
+        console.log('break 반복문 종료')
+
+        // 이중 for 문
+        for(let i = 1; i <= 5; i++){
+            for(let j = 1; j <= 5; j++){
+
+                document.write(j+'');
+            }
+            document.write('<br/>');
+        }
+
+        for(let i = 2; i <= 9; i++){
+            for(let j = 1; j <= 9; j++){
+                document.write(`${i} * ${j} = ${i*j}`)
+            }
+        }
+    </script>
+</body>
+</html>
